@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lconiau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lconiau <lconiau@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 19:48:33 by lconiau           #+#    #+#             */
-/*   Updated: 2024/01/25 20:03:04 by lconiau          ###   ########.fr       */
+/*   Updated: 2024/03/14 07:19:11 by lconiau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_fractol
 	double	julia_y;
 	int		color_start;
 	int		color_end;
+	int		islock;
 }			t_fractol;
 
 t_complex		square_complex(t_complex z);

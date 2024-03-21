@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lconiau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lconiau <lconiau@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 19:33:00 by lconiau           #+#    #+#             */
-/*   Updated: 2024/01/25 19:37:55 by lconiau          ###   ########.fr       */
+/*   Updated: 2024/03/21 16:29:55 by lconiau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	data_init(t_fractol *fractal)
 	fractal->zoom = 1.0;
 	fractal->color_start = RED;
 	fractal->color_end = WHITE;
+	fractal->islock = 1;
 }
 
 static void	events_init(t_fractol *fractal)

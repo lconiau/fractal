@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lconiau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lconiau <lconiau@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 19:25:21 by lconiau           #+#    #+#             */
-/*   Updated: 2024/01/25 19:32:46 by lconiau          ###   ########.fr       */
+/*   Updated: 2024/03/14 07:29:11 by lconiau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,25 @@ int	key_handler(int keysym, t_fractol *fractal)
 
 int	mouse_handler(int button, int x, int y, t_fractol *fractal)
 {
-	if (button == Button5)
+	if (button == Button2)
 	{
-		mouse_interact(x, y, fractal);
-		fractal->zoom *= 1.05;
+		if (fractal->islock == 0)
+			fractal->islock = 1;
+		else
+			fractal->islock = 0;
 	}
-	else if (button == Button4)
+	if (fractal->islock == 1)
 	{
-		mouse_interact(x, y, fractal);
-		fractal->zoom *= 0.95;
+		if (button == Button5)
+		{
+			mouse_interact(x, y, fractal);
+			fractal->zoom *= 1.05;
+		}
+		else if (button == Button4)
+		{
+			mouse_interact(x, y, fractal);
+			fractal->zoom *= 0.95;
+		}
 	}
 	fractal_render(fractal);
 	return (0);

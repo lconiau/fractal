@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   string_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lconiau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lconiau <lconiau@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 19:47:26 by lconiau           #+#    #+#             */
-/*   Updated: 2024/01/25 19:48:06 by lconiau          ###   ########.fr       */
+/*   Updated: 2024/03/14 07:28:04 by lconiau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ double	atodbl(char *s)
 
 int	julia_track(int x, int y, t_fractol *fractal)
 {
-	if (!ft_strncmp(fractal->name, "julia", 5))
+	if (!ft_strncmp(fractal->name, "julia", 5) && fractal->islock == 0)
 	{
 		fractal->julia_x = (map(x, -2, +2, WIDTH) * fractal->zoom);
 		fractal->julia_y = (map(y, +2, -2, WIDTH) * fractal->zoom);

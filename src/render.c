@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lconiau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lconiau <lconiau@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 19:42:17 by lconiau           #+#    #+#             */
-/*   Updated: 2024/01/25 19:47:07 by lconiau          ###   ########.fr       */
+/*   Updated: 2024/03/14 07:32:33 by lconiau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ static void	handle_pixel(int x, int y, t_fractol *fractal)
 	i = 0;
 	z.x = (map(x, -2, +2, WIDTH) * fractal->zoom) + fractal->shift_x;
 	z.y = (map(y, +2, -2, HEIGHT) * fractal->zoom) + fractal->shift_y;
-	c.x = z.x;
-	c.y = z.y;
 	mandel_vs_julia(&z, &c, fractal);
 	while (i < fractal->iteration_definition)
 	{
